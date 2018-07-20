@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'position/getPosition'
+  get 'position/getPosition', to: 'position#getPosition'
+  get 'position/save', to: 'position#save'
 
+  root 'position#getPosition'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

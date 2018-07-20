@@ -1,18 +1,24 @@
-<h1>Position#getPosition</h1>
-<p>Find me in app/views/position/getPosition.html.erb</p>
+<body>
+	<h1>Position#getPosition</h1>
+	<p>Find me in app/views/position/getPosition.html.erb</p>
 
-<script>
-	function  getLocation(){
-		if (navigator.geolocation){
-			navigator.geolocation.getCurrentPosition(showPosition);
-		}else{
-			document.write("No sirve!! :C ");
+	<script>
+		function getLocation() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(sendPosition);
+		    } else {
+		        document.write("Geolocation is not supported by this browser.");
+		    }
 		}
-	}
+		function showPosition(position) {
+		    document.write("<br> Latitude: " + position.coords.latitude +
+		    " Longitude: " + position.coords.longitude);
+		}
 
-	function showPosition(position){
-		document.write("Latitud: "+position.coords.latitude + "<br>Longitud: " + position.coords.longitude);
-	}
+		function sendPosition(position) {
+			window.open("save?lat="+position.coords.latitude +"&lon="+position.coords.longitude,"_self");
+		}
 
-	window.setInterval(getLocation,1000);
-</script>	
+		window.setInterval(getLocation,1000);
+	</script>	
+</body>
