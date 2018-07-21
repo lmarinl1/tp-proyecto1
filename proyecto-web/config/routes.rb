@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'position/getPosition', to: 'position#getPosition'
   get 'position/save', to: 'position#save'
 
