@@ -19,6 +19,17 @@
 			window.open("save?lat="+position.coords.latitude +"&lon="+position.coords.longitude,"_self");
 		}
 
-		window.setInterval(getLocation,1000);
+		window.setInterval(getLocation,3000);
 	</script>	
+
+	<% while !@positions.empty? %>
+        <% coordinate = @positions.pop %>
+        <br><h3> Coordinate <%= coordinate.id %> </h3>
+        <ul>
+        	<li> <b>UserId:</b> <%= coordinate.user %></li>
+        	<li> <b>Latitude:</b> <%= coordinate.latitud %></li>
+        	<li> <b>Longitude:</b> <%= coordinate.longitud %></li>
+        </ul>
+	<% end %>
+
 </body>
