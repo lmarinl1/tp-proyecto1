@@ -59,3 +59,6 @@ gem 'devise'
 # Style
 gem 'bootstrap'
 gem 'jquery-rails'
+
+# DB
+gem 'pg'
