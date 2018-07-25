@@ -1,30 +1,20 @@
 # From https://itnext.io/docker-rails-puma-nginx-postgres-999cd8866b18
 FROM ruby:2.5.1
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs 
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-# Set an environment variable where the Rails app is installed to inside of Docker image
+RUN mkdir /railsApp
 
-ENV RAILS_ROOT /var/www/app_name
-RUN mkdir -p $RAILS_ROOT 
+WORKDIR /railsApp
 
-# Set working directory
-WORKDIR $RAILS_ROOT
+COPY Gemfile /railsApp/Gemfile
 
-# Setting env up
-ENV RAILS_ENV='production'
-ENV RAKE_ENV='production' 
+COPY Gemfile.lock /railsApp/Gemfile.lock
 
-# Adding gems
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+RUN bundle install
 
-RUN bundle install --jobs 20 --retry 5 --without development test 
+COPY . /railsApp
 
-# Adding project files
-COPY . .
-RUN bundle exec rake assets:precompile
+RUN rake db:migrate
 
-EXPOSE 3000
-
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+#CMD ["rails", "server", "--binding", "0.0.0.0"] 
