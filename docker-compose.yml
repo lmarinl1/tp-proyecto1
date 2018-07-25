@@ -1,12 +1,12 @@
 
-version: '1'
+version: '2'
 
 services:
   db:
     image: postgres
     environment:
-      POSTGRES_USER: 'tracker'
-      POSTGRES_PASSWORD: 'tptelematica'
+      POSTGRES_USER: "tracker"
+      POSTGRES_PASSWORD: "tptelematica"
     volumes:
       - /tmp/postgres:/var/lib/postgresql/data
   app:
@@ -25,4 +25,4 @@ services:
     ports:
       - "80:80"
     depends_on:
-- app 
+      - app 
