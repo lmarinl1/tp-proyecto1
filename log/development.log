@@ -14757,3 +14757,1050 @@ Completed 200 OK in 1686ms (Views: 1665.8ms | ActiveRecord: 1.9ms)
   [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-07-22 19:41:25.559405"], ["key", "environment"]]
   [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (10.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-22 15:22:33 -0500
+  [1m[35m (31.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 152ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-07-22 15:22:34 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (9.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (145.6ms)
+Completed 200 OK in 36140ms (Views: 36019.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-25 14:35:18 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PositionController#getPosition as HTML
+Completed 401 Unauthorized in 58ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-07-25 14:35:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (100.7ms)
+Completed 200 OK in 1725ms (Views: 1649.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-07-25 14:35:29 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGrTrc30TQ2zb4TpiYSKpkQEvDhucz8Rn42E58/LUj53NXWB07PNFB6iQykKadINygrp2IoHPnI9rLt0r4qW2A==", "user"=>{"email"=>"lmarinl1@eafit.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (31.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lmarinl1@eafit.edu.co"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 151ms (ActiveRecord: 31.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGrTrc30TQ2zb4TpiYSKpkQEvDhucz8Rn42E58/LUj53NXWB07PNFB6iQykKadINygrp2IoHPnI9rLt0r4qW2A==", "user"=>{"email"=>"lmarinl1@eafit.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 504ms (Views: 115.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-07-25 14:35:35 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 160ms (Views: 156.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-07-25 14:35:52 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WVBbwNA+rvthBGVbQ40TxqjjH98f2Fp1gIt4x6Nmc8yLcRSWWDraenT1z9WqAoQYG+6g7ibsgxp8+6WJHAZLpw==", "user"=>{"email"=>"lmarinl1@eafit.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lmarinl1@eafit.edu.co"], ["LIMIT", 1]]
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "lmarinl1@eafit.edu.co"], ["encrypted_password", "$2a$11$8O5PLYcrsdbiCoLk3ZQd2.5r6FTJqZb1bOZwnqOZjVGs//9X9zwZ6"], ["created_at", "2018-07-25 19:35:53.261437"], ["updated_at", "2018-07-25 19:35:53.261437"]]
+  [1m[35m (130.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-07-25 19:35:53.410457"], ["last_sign_in_at", "2018-07-25 19:35:53.410457"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-07-25 19:35:53.413731"], ["id", 1]]
+  [1m[35m (129.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 729ms (ActiveRecord: 266.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-07-25 14:35:53 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.9ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 157ms (Views: 103.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:35:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/save"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:04 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.9ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 153ms (Views: 132.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:08 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:08.566214"], ["updated_at", "2018-07-25 19:36:08.566214"]]
+  [1m[35m (112.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 192ms (ActiveRecord: 121.2ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:08 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 132ms (Views: 113.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:14 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:14.097975"], ["updated_at", "2018-07-25 19:36:14.097975"]]
+  [1m[35m (144.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 186ms (ActiveRecord: 154.4ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:14 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.7ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 141ms (Views: 129.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:18 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:18.438704"], ["updated_at", "2018-07-25 19:36:18.438704"]]
+  [1m[35m (161.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 189ms (ActiveRecord: 167.4ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:18 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.0ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 140ms (Views: 123.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:23 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:24.003830"], ["updated_at", "2018-07-25 19:36:24.003830"]]
+  [1m[35m (165.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 204ms (ActiveRecord: 174.9ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:24 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.7ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 128ms (Views: 113.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:29 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:29.543759"], ["updated_at", "2018-07-25 19:36:29.543759"]]
+  [1m[35m (160.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 199ms (ActiveRecord: 173.9ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:29 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 139ms (Views: 120.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:35 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:35.140992"], ["updated_at", "2018-07-25 19:36:35.140992"]]
+  [1m[35m (131.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 159ms (ActiveRecord: 136.0ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:35 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.7ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 140ms (Views: 124.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:39 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:39.148284"], ["updated_at", "2018-07-25 19:36:39.148284"]]
+  [1m[35m (180.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 224ms (ActiveRecord: 187.3ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:39 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (2.4ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 117ms (Views: 103.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:44 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:44.732948"], ["updated_at", "2018-07-25 19:36:44.732948"]]
+  [1m[35m (186.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 228ms (ActiveRecord: 189.2ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:44 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 127ms (Views: 109.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:51 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:51.814033"], ["updated_at", "2018-07-25 19:36:51.814033"]]
+  [1m[35m (183.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 227ms (ActiveRecord: 197.8ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:52 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.7ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 145ms (Views: 124.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:36:57 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (22.2ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:36:57.440709"], ["updated_at", "2018-07-25 19:36:57.440709"]]
+  [1m[35m (359.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 411ms (ActiveRecord: 389.7ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:36:57 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.0ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 135ms (Views: 112.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:02 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:02.472859"], ["updated_at", "2018-07-25 19:37:02.472859"]]
+  [1m[35m (171.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 221ms (ActiveRecord: 179.7ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:02 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (5.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 160ms (Views: 137.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:08 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:08.120775"], ["updated_at", "2018-07-25 19:37:08.120775"]]
+  [1m[35m (180.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 225ms (ActiveRecord: 186.0ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:08 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (2.9ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 127ms (Views: 105.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:12 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:12.704166"], ["updated_at", "2018-07-25 19:37:12.704166"]]
+  [1m[35m (165.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 192ms (ActiveRecord: 170.8ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:12 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 126ms (Views: 107.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:18 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:18.277705"], ["updated_at", "2018-07-25 19:37:18.277705"]]
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 146ms (ActiveRecord: 112.8ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:18 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 133ms (Views: 118.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:22 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:22.117363"], ["updated_at", "2018-07-25 19:37:22.117363"]]
+  [1m[35m (193.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 235ms (ActiveRecord: 200.2ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:22 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 146ms (Views: 124.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:27 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.4ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:27.750494"], ["updated_at", "2018-07-25 19:37:27.750494"]]
+  [1m[35m (172.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 212ms (ActiveRecord: 179.6ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:27 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.9ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 142ms (Views: 120.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:33 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:33.288122"], ["updated_at", "2018-07-25 19:37:33.288122"]]
+  [1m[35m (164.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 199ms (ActiveRecord: 169.7ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:33 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (2.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 122ms (Views: 104.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/position/getPosition" for 10.164.5.201 at 2018-07-25 14:37:37 -0500
+Cannot render console from 10.164.5.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PositionController#getPosition as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.164.5.201 at 2018-07-25 14:37:37 -0500
+Cannot render console from 10.164.5.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 133ms (Views: 127.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:38 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:38.844251"], ["updated_at", "2018-07-25 19:37:38.844251"]]
+  [1m[35m (219.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 260ms (ActiveRecord: 225.5ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:39 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.8ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 141ms (Views: 128.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:42 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:42.665508"], ["updated_at", "2018-07-25 19:37:42.665508"]]
+  [1m[35m (173.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 203ms (ActiveRecord: 178.8ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:42 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (0.9ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 125ms (Views: 112.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:48 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (12.8ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:48.248299"], ["updated_at", "2018-07-25 19:37:48.248299"]]
+  [1m[35m (187.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 230ms (ActiveRecord: 201.6ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:48 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.8ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 144ms (Views: 125.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:54 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:54.170003"], ["updated_at", "2018-07-25 19:37:54.170003"]]
+  [1m[35m (184.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 224ms (ActiveRecord: 195.5ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:54 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.4ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 137ms (Views: 115.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:37:59 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:37:59.754606"], ["updated_at", "2018-07-25 19:37:59.754606"]]
+  [1m[35m (183.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 229ms (ActiveRecord: 186.7ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:37:59 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.0ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 155ms (Views: 139.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:04 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:04.074728"], ["updated_at", "2018-07-25 19:38:04.074728"]]
+  [1m[35m (137.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 173ms (ActiveRecord: 142.9ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:04 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 138ms (Views: 117.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:09 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.2ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:09.600020"], ["updated_at", "2018-07-25 19:38:09.600020"]]
+  [1m[35m (232.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 278ms (ActiveRecord: 248.1ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:09 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.3ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 136ms (Views: 111.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:14 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:14.952208"], ["updated_at", "2018-07-25 19:38:14.952208"]]
+  [1m[35m (226.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 253ms (ActiveRecord: 231.8ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:15 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 135ms (Views: 116.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 10.161.33.184 at 2018-07-25 14:38:20 -0500
+Cannot render console from 10.161.33.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PositionController#getPosition as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.161.33.184 at 2018-07-25 14:38:20 -0500
+Cannot render console from 10.161.33.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 135ms (Views: 129.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:21 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:21.024219"], ["updated_at", "2018-07-25 19:38:21.024219"]]
+  [1m[35m (146.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 172ms (ActiveRecord: 151.3ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:21 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.4ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 132ms (Views: 113.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:24 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:24.758649"], ["updated_at", "2018-07-25 19:38:24.758649"]]
+  [1m[35m (177.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 210ms (ActiveRecord: 180.2ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:24 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.0ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 115ms (Views: 101.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:30 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:30.322999"], ["updated_at", "2018-07-25 19:38:30.322999"]]
+  [1m[35m (176.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 198ms (ActiveRecord: 180.5ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:30 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (2.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 153ms (Views: 123.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:36 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:36.291615"], ["updated_at", "2018-07-25 19:38:36.291615"]]
+  [1m[35m (172.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 217ms (ActiveRecord: 185.2ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:36 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 160ms (Views: 136.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:41 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:41.886703"], ["updated_at", "2018-07-25 19:38:41.886703"]]
+  [1m[35m (166.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 196ms (ActiveRecord: 169.5ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:42 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.2ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 120ms (Views: 105.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:45 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:45.876648"], ["updated_at", "2018-07-25 19:38:45.876648"]]
+  [1m[35m (182.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 207ms (ActiveRecord: 188.0ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:46 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 142ms (Views: 118.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:51 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:51.487998"], ["updated_at", "2018-07-25 19:38:51.487998"]]
+  [1m[35m (137.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 184ms (ActiveRecord: 150.2ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:51 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.7ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 133ms (Views: 111.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:38:57 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:38:57.196140"], ["updated_at", "2018-07-25 19:38:57.196140"]]
+  [1m[35m (139.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 169ms (ActiveRecord: 145.6ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:38:57 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 158ms (Views: 136.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:02 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:02.783130"], ["updated_at", "2018-07-25 19:39:02.783130"]]
+  [1m[35m (151.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 191ms (ActiveRecord: 163.1ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:02 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 133ms (Views: 116.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:06 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:06.656250"], ["updated_at", "2018-07-25 19:39:06.656250"]]
+  [1m[35m (150.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 187ms (ActiveRecord: 157.3ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:06 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.4ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 159ms (Views: 143.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:12 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:12.215267"], ["updated_at", "2018-07-25 19:39:12.215267"]]
+  [1m[35m (160.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 187ms (ActiveRecord: 166.1ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:12 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.6ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 139ms (Views: 117.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:18 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (12.7ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:18.996130"], ["updated_at", "2018-07-25 19:39:18.996130"]]
+  [1m[35m (165.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 208ms (ActiveRecord: 179.3ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:19 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (4.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 170ms (Views: 139.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:24 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:24.611688"], ["updated_at", "2018-07-25 19:39:24.611688"]]
+  [1m[35m (186.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 227ms (ActiveRecord: 200.3ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:24 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.3ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 126ms (Views: 111.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:28 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:28.397704"], ["updated_at", "2018-07-25 19:39:28.397704"]]
+  [1m[35m (136.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 181ms (ActiveRecord: 139.7ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:28 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.8ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 142ms (Views: 121.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:33 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:33.950704"], ["updated_at", "2018-07-25 19:39:33.950704"]]
+  [1m[35m (162.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 209ms (ActiveRecord: 168.1ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:34 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.3ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 134ms (Views: 116.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users/sign_in" for 10.164.5.201 at 2018-07-25 14:39:36 -0500
+Cannot render console from 10.164.5.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OATXSSeE6bLowA9bPtxfyqqqA8hUAZxg/njVpzO8RRcwaikBfoWGv3nbUqtTb9SN4KasmUp7J/RDYpNorc9iCA==", "user"=>{"email"=>"lmarinl1@eafit.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lmarinl1@eafit.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-07-25 19:39:36.634080"], ["current_sign_in_ip", "10.164.5.201"], ["sign_in_count", 2], ["updated_at", "2018-07-25 19:39:36.636878"], ["id", 1]]
+  [1m[35m (177.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://10.164.1.238:3000/position/getPosition
+Completed 302 Found in 540ms (ActiveRecord: 179.6ms)
+
+
+Started GET "/position/getPosition" for 10.164.5.201 at 2018-07-25 14:39:36 -0500
+Cannot render console from 10.164.5.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.6ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 151ms (Views: 128.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:39 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:39.189367"], ["updated_at", "2018-07-25 19:39:39.189367"]]
+  [1m[35m (190.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 244ms (ActiveRecord: 198.1ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:39 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.1ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 118ms (Views: 103.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:44 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:44.791345"], ["updated_at", "2018-07-25 19:39:44.791345"]]
+  [1m[35m (343.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 366ms (ActiveRecord: 347.5ms)
+
+
+Started GET "/position/getPosition" for 10.164.5.201 at 2018-07-25 14:39:45 -0500
+Cannot render console from 10.164.5.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:45 -0500
+  [1m[36mPosition Load (3.3ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.8ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (3.2ms)
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 287ms (Views: 252.4ms | ActiveRecord: 8.0ms)
+
+
+Completed 200 OK in 362ms (Views: 331.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/position/save?lat=6.2019381&lon=-75.58005639999999" for 127.0.0.1 at 2018-07-25 14:39:49 -0500
+Processing by PositionController#save as HTML
+  Parameters: {"lat"=>"6.2019381", "lon"=>"-75.58005639999999"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO "positions" ("user", "latitud", "longitud", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user", 1], ["latitud", 6.2019381], ["longitud", -75.58005639999999], ["created_at", "2018-07-25 19:39:49.380725"], ["updated_at", "2018-07-25 19:39:49.380725"]]
+  [1m[35m (81.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/position/getPosition
+Completed 302 Found in 130ms (ActiveRecord: 92.6ms)
+
+
+Started GET "/position/getPosition" for 127.0.0.1 at 2018-07-25 14:39:49 -0500
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (1.2ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 165ms (Views: 144.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/position/getPosition" for 10.164.5.201 at 2018-07-25 14:40:33 -0500
+Cannot render console from 10.164.5.201! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PositionController#getPosition as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPosition Load (2.5ms)[0m  [1m[34mSELECT "positions".* FROM "positions" WHERE "positions"."user" = ?[0m  [["user", 1]]
+  Rendering position/getPosition.html.erb within layouts/application
+  Rendered position/getPosition.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 143ms (Views: 121.6ms | ActiveRecord: 3.5ms)
+
+

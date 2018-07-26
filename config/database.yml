@@ -20,11 +20,10 @@ development:
 test:
   adapter: postgresql
   database: proyecto1_test
-  user: tracker
-  password: tptelematica
+  user: pguser
+  password: test123
   host: localhost
   port: 5432
-  pool: 5
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -32,8 +31,8 @@ test:
 production:
   adapter: postgresql
   database: proyecto1_pro
-  user: tracker
-  password: tptelematica
+  user: pguser
+  password: test123
   host: localhost
   port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
