@@ -1,0 +1,31 @@
+<h1>Map#show</h1>
+<p>Find me in app/views/map/show.html.erb</p>
+<br>
+<div id="map"></div>
+<script>
+  	function initMap(){
+	    var positions = <%= raw @results.to_json %>;
+	    var centroMap;
+	    if(positions[0]!=null){
+	      centroMap  = new google.maps.LatLng(positions[0].latitud,positions[0].longitud);
+	    }else{
+	      centroMap = new google.maps.LatLng(6.217, -75.567);
+	    }
+	    var options = {
+	      zoom: 4,
+	      center: centroMap
+	    };
+	    var myMap = new google.maps.Map(document.getElementById("map"), options);
+	    var i;
+	    for(i=0; i<positions.length; i++){
+	      var pos = new google.maps.LatLng(positions[i].latitud, positions[i].longitud);
+	      var mark = new google.maps.Marker({
+	        position: pos,
+	        map: myMap
+	      });
+	    }
+  	}
+</script>
+<script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe0d0tWZ9ErIv3r1YfnudfgyObTkL9DzM&callback=initMap" async defer> 
+    </script>

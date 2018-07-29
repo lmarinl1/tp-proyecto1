@@ -10,9 +10,9 @@ class PositionController < ApplicationController
 	    puts "lon: "+longitud.to_str+" lat: "+latitud.to_str
 	    @position = Position.new(user: current_user.id,latitud: latitud, longitud: longitud)
 	    if @position.save
-	          format.html { redirect_to position_getPosition_path }
+	          format.html { redirect_to get_position_path }
 	    else
-	        redirect_to position_getPosition_path
+	        redirect_to get_position_path
 	    end
 	end
 
