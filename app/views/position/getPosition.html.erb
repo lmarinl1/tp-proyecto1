@@ -4,11 +4,12 @@
 <script>
 	function getLocation() {
 	    if (navigator.geolocation) {
-	        navigator.geolocation.getCurrentPosition(sendPosition);
+	        navigator.geolocation.getCurrentPosition(storePosition);
 	    } else {
 	        document.write("Geolocation is not supported by this browser.");
 	    }
 	}
+
 	function showPosition(position) {
 	    document.write("<br> Latitude: " + position.coords.latitude +
 	    " Longitude: " + position.coords.longitude);
@@ -17,6 +18,16 @@
 	function sendPosition(position) {
 		window.open("save?lat="+position.coords.latitude +"&lon="+position.coords.longitude,"_self");
 	}
+
+	function storePosition(position){
+        
+        var original_url = window.location.href;
+        var store_url = "save?lat=" + position.coords.latitude +
+		"&lon=" + position.coords.longitude;
+        var url = original_url.slice(0,original_url.indexOf("getPosition")) + store_url;
+	window.open(url, "_self");
+  
+}
 
 	setInterval(getLocation,1000);
 </script>	

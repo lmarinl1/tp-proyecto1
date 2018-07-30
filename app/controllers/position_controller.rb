@@ -1,4 +1,8 @@
 class PositionController < ApplicationController
+
+  def index
+  end
+
   def getPosition
   	@positions = (Position.where({user: current_user.id}).reverse)[0,10]
   end
