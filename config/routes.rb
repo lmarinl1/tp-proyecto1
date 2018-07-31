@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'map/show'
+
+  namespace :api, defaults: {format: 'json'} do
+    resources :location, only: [:create]
+  end
 
   devise_for :users
   get 'position/getPosition', to: 'position#getPosition', as: 'get_position'
