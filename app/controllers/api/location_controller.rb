@@ -5,19 +5,20 @@ class Api::LocationController < ApplicationController
   def create
     latitud = params[:lat]
     longitud = params[:lon]
+    token = params[:token]
     user = params[:user]
     @position = Position.new(user: user,latitud: latitud, longitud: longitud)
-    if @position.save
-      render json: @location, status: :created
+    if (token == User.find(user).token) and @position.save
+      render json: @position, status: :created
     else
-      render json: @location.errors, status: :unprocessable_entity
+      render json: @position.errors, status: :unprocessable_entity
     end
   end
 
   private
 
-  def demand_params
-    params.permit(:user, :lat, :lon)
+  def location_params
+    params.require(:user, :token).permit(:lat, :lon)
   end
 
 end
