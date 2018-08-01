@@ -35,9 +35,8 @@
 
 <% while !@positions.empty? %>
     <% coordinate = @positions.pop %>
-    <br><h3> Coordinate <%= coordinate.id %> </h3>
     <ul>
-    	<li> <b>UserId:</b> <%= coordinate.user %></li>
+    	<li> <b>UserId:</b> <%= current_user.email %></li>
     	<li> <b>Latitude:</b> <%= coordinate.latitud %></li>
     	<li> <b>Longitude:</b> <%= coordinate.longitud %></li>
     </ul>
